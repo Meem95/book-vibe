@@ -1,6 +1,8 @@
+import { Link, NavLink } from "react-router-dom";
+
 const Nav = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,49 +23,49 @@ const Nav = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p- shadow bg-base-100 rounded-box w-52 "
           >
-            <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>About Us</a>
-          </li>
-          <li>
-            <a>Listed Books</a>
-          </li>
-          <li>
-            <a>Pages To Read</a>
-          </li>
-          <li>
-            <a>Contact Us</a>
-          </li>
+            <NavLink to='/'  className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}> 
+            Home
+          </NavLink>
+          <NavLink to='/about' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4 '}>
+            About Us
+          </NavLink>
+          <NavLink to='/listed-book' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}>
+            Listed Books
+          </NavLink>
+          <NavLink to='/page-to-read' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}>
+            Pages To Read
+          </NavLink>
+          <NavLink to='/contact' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}>
+            Contact Us
+          </NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Book Vibe</a>
+        <Link to="/" className="btn btn-ghost text-xl font-bold">Book Vibe</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>About Us</a>
-          </li>
-          <li>
-            <a>Listed Books</a>
-          </li>
-          <li>
-            <a>Pages To Read</a>
-          </li>
-          <li>
-            <a>Contact Us</a>
-          </li>
+        <ul className="menu menu-horizontal px-1 space-x-3">
+          <NavLink to='/'  className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}> 
+            Home
+          </NavLink>
+          <NavLink to='/about' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4 '}>
+            About Us
+          </NavLink>
+          <NavLink to='/listed-book' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}>
+            Listed Books
+          </NavLink>
+          <NavLink to='/page-to-read' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}>
+            Pages To Read
+          </NavLink>
+          <NavLink to='/contact' className={({isActive})=> isActive? 'text-primary font-bold btn-outline btn-success btn ' : 'font-bold text-success mt-4'}>
+            Contact Us
+          </NavLink>
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Sign in</a>
-        <a className="btn">Sign Up</a>
+      <div className="navbar-end space-x-2">
+        <a className="btn  btn-success text-white">Sign in</a>
+        <a className="btn btn-info text-white">Sign Up</a>
       </div>
     </div>
   );
