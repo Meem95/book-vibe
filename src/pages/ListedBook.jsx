@@ -1,32 +1,10 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
-import { getStoredWishlist } from "../utility/localStorage";
-import Wishlist from "../components/Wishlist";
-
-
-
+import { Link, Outlet } from "react-router-dom";
 
 const ListedBook = () => {
-    const wishlists = useLoaderData();
-    const [wishlistBooks, setWishlistBooks] = useState([]);
-    useEffect(() => {
-      const storedWishlistIds = getStoredWishlist();
-      if (wishlists.length > 0) {
-        //const wishlistBooks = wishlists.filter(wishlist => storedWishlistIds.includes(wishlist.bookId))
-        const wishlistBooks = [];
-        for (const id of storedWishlistIds) {
-          const wishlist = wishlists.find((wishlist) => wishlist.bookId === id);
-          if (wishlist) {
-            wishlistBooks.push(wishlist);
-          }
-        }
-        setWishlistBooks(wishlistBooks);
-        console.log(wishlistBooks, storedWishlistIds,wishlists);
-      }
-    }, []);
-  
+   
     const [tabIndex,setTabIndex] = useState(0)
 
   return (
@@ -57,7 +35,7 @@ const ListedBook = () => {
       <div className="flex items-start  overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap  text-black mt-14">
         <Link
                onClick={() => setTabIndex(0)}
-               to='/listed-book/read'
+               to='read'
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2  ${tabIndex === 0 ? ' border border-b-0' : '  border-b' }  border-gray-400 text-black`}
         >
           <span className="text-black font-bold">Read Books</span>
