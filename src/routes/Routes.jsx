@@ -5,6 +5,8 @@ import About from "../pages/About";
 import ListedBook from "../pages/ListedBook";
 import PagesToRead from "../pages/PagesToRead";
 import Contact from "../pages/Contact";
+import SingleBook from "../components/SingleBook";
+import ErrorPage from "../components/ErrorPage";
 
 
 export const router = createBrowserRouter([
@@ -14,7 +16,9 @@ export const router = createBrowserRouter([
       children: [
         {
          path : '/',
-         element :<Home></Home>
+         element :<Home></Home>,
+         errorElement:<ErrorPage></ErrorPage>
+         
   
         },
         {
@@ -33,28 +37,13 @@ export const router = createBrowserRouter([
           path: '/contact',
            element: <Contact/>
         },
-        // {
-        //   path : '/blog/:id',
-        //   element: <SingleBlog/>,
-        //   loader : ({params}) => fetch(`https://dev.to/api/articles/${params.id}`),
-        //   children: [
-        //     {
-        //         index: true,
-        //         element : <Content/>,
-        //         loader : ({params}) => fetch(`https://dev.to/api/articles/${params.id}`),
-        //     },{
-        //         path: 'author',
-        //         element : <Author/>,
-        //         loader : ({params}) => fetch(`https://dev.to/api/articles/${params.id}`),
-        //     }
-        //   ]
-  
-        // },
-        // {
-        //   path: '/bookmarks',
-        //   element: <Bookmarks></Bookmarks>
-      
-        // }
+        {
+          path : '/book/:id',
+          element: <SingleBook/>,
+          loader : () => fetch('../books.json')
+          
+        },
+        
   
       ]
     },

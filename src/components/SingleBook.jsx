@@ -1,0 +1,76 @@
+import { useLoaderData, useParams } from "react-router-dom";
+
+const SingleBook = () => {
+  const book = useLoaderData();
+  const {id} = useParams();
+  const bk = book.find(bk => bk.bookId == id);
+
+
+  console.log("Fetched book data:", bk );
+ 
+  return (
+    <div className=" text-gray-50 min-h-screen max-w-7xl mx-auto">
+      <div className="container grid grid-cols-12 mx-auto mt-7">
+        <div
+          className="flex flex-col justify-center col-span-12 align-middle  lg:col-span-6 lg:h-full rounded-3xl"
+          style={{ backgroundImage: `url(${bk.image})`, backgroundSize: "cover" }}
+        ></div>
+        <div className="flex flex-col text-black col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 divide-gray-700">
+          <div className="pt-6 pb-4 space-y-2">
+            <h1 className="text-3xl font-bold">{bk.bookName}.</h1>
+            <p>By:{bk.author}</p>
+          </div>
+          <div className="pt-6 pb-4 space-y-2">
+            <h1 className="text-xl ">{bk.category}</h1>
+            
+          </div>
+          <div className="pt-6 pb-4 space-y-2">
+            <p><span className="font-bold">Review:</span> {bk.review} </p>
+          </div>
+          <div className="pt-6 pb-4 space-y-2">
+            <p className="font-bold">Tag  {
+                        bk.tags.map((tag,idx )=> <span key={idx} className="badge badge-[#23BE0A12] text-[#23BE0A] p-2 ">  #{tag} </span>)
+            }</p>
+          </div>
+          <div className="pt-6 pb-4 space-y-2">
+            <div className="overflow-x-auto">
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <td>Number of Pages:</td>
+                    <td>{bk.totalPages}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>Publisher:</td>
+                    <td>{bk.publisher}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>Year of Publishing:</td>
+                    <td>{bk.yearOfPublishing}</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>Rating:</td>
+                    <td>{bk.rating}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="navbar-end space-x-2 mt-5">
+        <a className="btn  btn-neutral bg-white text-black">Read</a>
+        <a className="btn btn-info text-white">Whishlist</a>
+      </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SingleBook;
