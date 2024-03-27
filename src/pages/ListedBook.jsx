@@ -6,7 +6,6 @@ import { Link, Outlet } from "react-router-dom";
 const ListedBook = () => {
    
     const [tabIndex,setTabIndex] = useState(0)
-
   return (
     <div className="min-h-screen max-w-7xl mx-auto mt-14">
       <div className="px-8 py-2 bg-[#1313130D] text-black ">
@@ -46,7 +45,6 @@ const ListedBook = () => {
         to='wishlist'
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? ' border border-b-0' : '  border-b' } rounded-t-lg border-gray-400 text-black`}
         >
-         
           <span className="text-black font-bold">Wishlist Books</span>
         </Link>
       </div>

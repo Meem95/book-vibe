@@ -30,8 +30,6 @@ const saveWishlist = (bookId) => {
     return toast.error("Failed to load read list data.");
   }
   console.log("wishlist11", storedWishlists);
-
-  // Check if the bookId exists in the readlist
   const existsInReadList = storedReadList.includes(bookId);
   if (existsInReadList) {
     return toast("This book is already marked as read.");
@@ -56,28 +54,16 @@ const getStoredReadList = () => {
   return [];
 };
 const saveReadList = (bookId) => {
-  // const storedReadlists = getStoredReadList();
-  // console.log("read1",storedReadlists)
-  // const exists = storedReadlists.find(ReadId => ReadId === bookId);
-  // console.log("read",exists)
-  // if(exists) {
-  //     return toast('Already Book marked as Read ')
-  // }
-  // storedReadlists.push(bookId);
-  //     localStorage.setItem('readlist', JSON.stringify(storedReadlists))
-  //     toast.success('Book marked as Read Successfully')
 
   const storedReadlists = getStoredReadList();
   const storedWishlist = getStoredWishlist(); 
   
   console.log("read1", storedReadlists);
 
-  // Check if the bookId exists in the wishlist
   const existsInWishlist = storedWishlist.includes(bookId);
   if (existsInWishlist) {
     return toast("This book is already wishlist.");
   }
-
   const exists = storedReadlists.find((ReadId) => ReadId === bookId);
   console.log("read", exists);
   if (exists) {

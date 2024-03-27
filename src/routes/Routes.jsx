@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
         {
           path: '/page-to-read',
            element: <PagesToRead/>,
-           
+           loader : () => fetch('../books.json'),
         },
         {
           path: '/contact',
