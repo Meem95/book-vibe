@@ -1,12 +1,22 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveWishlist } from "../utility/localStorage";
 
 const SingleBook = () => {
   const book = useLoaderData();
   const {id} = useParams();
-  const bk = book.find(bk => bk.bookId == id);
+  const idInt =parseInt(id)
+  const bk = book.find(bk => bk.bookId === idInt);
 
 
-  console.log("Fetched book data:", bk );
+  const addToWishList = () =>{
+    saveWishlist(idInt)
+    toast('Successfully added in wishlist')
+  }
+  const addToRead = () =>{
+    toast('Successfully added in Read')
+  }
  
   return (
     <div className=" text-gray-50 min-h-screen max-w-7xl mx-auto">
@@ -61,12 +71,13 @@ const SingleBook = () => {
                 </tbody>
               </table>
               <div className="navbar-end space-x-2 mt-5">
-        <a className="btn  btn-neutral bg-white text-black">Read</a>
-        <a className="btn btn-info text-white">Whishlist</a>
+        <a onClick={addToRead}  className="btn  btn-neutral bg-white text-black">Read</a>
+        <a onClick={addToWishList} className="btn btn-info text-white">Wishlist</a>
       </div>
             </div>
           </div>
           
+        <ToastContainer />
         </div>
       </div>
     </div>
