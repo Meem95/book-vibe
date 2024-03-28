@@ -21,13 +21,13 @@ const saveWishlist = (bookId) => {
   console.log("wishlist11", storedWishlists);
   const existsInReadList = storedReadList.includes(bookId);
   if (existsInReadList) {
-    return toast("This book is already marked as read.");
+    return toast("This book already marked as read.");
   }
 
   const exists = storedWishlists.find((wishlistId) => wishlistId === bookId);
   console.log("wishlist", exists);
   if (exists) {
-    return toast("This book is already wishlist.");
+    return toast("This book already in wishlist.");
   }
 
   storedWishlists.push(bookId);
@@ -51,12 +51,12 @@ const saveReadList = (bookId) => {
 
   const existsInWishlist = storedWishlist.includes(bookId);
   if (existsInWishlist) {
-    return toast("This book is already wishlist.");
+    return toast("This book already in wishlist.");
   }
   const exists = storedReadlists.find((ReadId) => ReadId === bookId);
   console.log("read", exists);
   if (exists) {
-    return toast("This book is already marked as read.");
+    return toast("This book already marked as read.");
   }
 
   storedReadlists.push(bookId);

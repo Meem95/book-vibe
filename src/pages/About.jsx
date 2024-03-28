@@ -6,7 +6,7 @@ const About = () => {
           <span>About Book Vibe</span>
         </div>
       </div>
-      <div className="container mx-auto py-8 flex items-center">
+      <div className="container mx-auto py-8 flex flex-col lg:flex-row items-center">
       <img src="https://i.ibb.co/DRzfDyR/1.jpg"  alt="About Us" className="w-1/3 mr-8 rounded-lg shadow-lg" />
       <div className="w-2/3">
         <p className="text-lg mb-6">
@@ -39,10 +39,10 @@ const About = () => {
       <h1 className="font-bold text-2xl text-center my-10"> Achivements</h1>
       <section className="p-6 bg-[#1313130D] text-black mb-6">
       
-        <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
+        <div className="container mx-auto grid justify-center grid-cols-1 text-center lg:grid-cols-3">
           <div className="flex flex-col justify-start m-2 lg:m-6">
             <p className="text-4xl font-bold leading-none lg:text-6xl">50+</p>
-            <p className="text-sm sm:text-base">Clients</p>
+            <p className="text-sm sm:text-base">Customers</p>
           </div>
           <div className="flex flex-col justify-start m-2 lg:m-6">
             <p className="text-4xl font-bold leading-none lg:text-6xl">89K</p>

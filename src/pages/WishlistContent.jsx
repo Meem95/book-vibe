@@ -2,6 +2,7 @@ import publish from "../assets/images/publish.svg";
 import prof from "../assets/images/prof.svg";
 import page from "../assets/images/page.svg";
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 const WishlistContent = ({ wishlistBook }) => {
   const {
     bookName,
@@ -11,7 +12,8 @@ const WishlistContent = ({ wishlistBook }) => {
     yearOfPublishing,
     totalPages,
     category,
-    publisher
+    publisher,
+    bookId
   } = wishlistBook;
   console.log('wishlistBook',wishlistBook);
   return (
@@ -23,7 +25,7 @@ const WishlistContent = ({ wishlistBook }) => {
               <img
                 src={image}
                 alt=""
-                className="h-52 rounded-lg"
+                className="lg:h-52 rounded-lg"
               />
               <div className="flex flex-col flex-1 px-5 ">
                 <h3 className="text-2xl font-bold ">{bookName}</h3>
@@ -36,17 +38,17 @@ const WishlistContent = ({ wishlistBook }) => {
                       }</p>
                   </div>
                   <div className="flex flex-col lg:flex-row ">
-                  <div><img src={publish} /></div>
+                  <div><img className="lg:w-full" src={publish} /></div>
                   <div className="w-full"> Year of Publishing: {yearOfPublishing}</div>
                      
                   </div>
                 </div>
-                <div className="flex flex-col lg:flex-row space-x-20 mb-5">
-                  <div className="flex flex-col lg:flex-row">
-                    <img src={prof} /> <span> Publisher: {publisher}</span>
+                <div className="flex flex-col lg:flex-row flex-1 mb-5  ">
+                  <div className="flex flex-col lg:flex-row w-full ">
+                    <img className="w-[25px] " src={prof} /> <span className="lg:w-full "> Publisher: {publisher}</span>
                   </div>
-                  <div className="flex flex-col lg:flex-row">
-                    <img src={page} /> <span> Page: {totalPages} </span>
+                  <div className="flex flex-col lg:flex-row lg:w-full ">
+                    <img  className="w-[25px] "  src={page} /> <span className="lg:w-full "> Page: {totalPages} </span>
                   </div>
                 </div>
                 <hr className="border-dashed border-1" />
@@ -57,9 +59,9 @@ const WishlistContent = ({ wishlistBook }) => {
                   <div className="badge p-4  text-lg text-white bg-[#FFAC33]">
                     Rating: {rating}
                   </div>
-                  <div className="badge p-4  text-lg badge-success text-white">
+                  <Link to={`/book/${bookId}`}><div className="badge p-4  text-lg badge-success text-white">
                     View Details
-                  </div>
+                  </div></Link>
                 </div>
               </div>
             </div>

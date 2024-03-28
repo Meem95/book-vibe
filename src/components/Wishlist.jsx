@@ -36,20 +36,6 @@ const Wishlist = () => {
 
 
 
-
-
-
-
-
-  // useEffect(() => {
-  //   const storedWishlistIds = getStoredWishlist();
-  //   if (wishlists.length > 0) {
-  //     const wishlistBooks = wishlists.filter(wishlist => storedWishlistIds.includes(wishlist.bookId));
-  //     setWishlistBooks(wishlistBooks);
-  //   }
-  // }, [wishlists]);
-
-
   return (
     <>
       {wishlistBooks.map(wishlistBook => (

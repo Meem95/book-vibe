@@ -11,8 +11,6 @@ const ListedBook = () => {
       setSortingCriteria(criteria);
     
     };
-    // const value =sortingCriteria;
-    // console.log("value",value)
   return (
     <div className="min-h-screen max-w-7xl mx-auto mt-14">
       <div className="px-8 py-2 bg-[#1313130D] text-black ">
@@ -36,7 +34,7 @@ const ListedBook = () => {
           <button onClick={() => handleSortBy("totalPages")}>Number of Pages</button>
         </li>
         <li>
-          <button onClick={() => handleSortBy("yearOfPublishing")}>Publisher Year</button>
+          <button onClick={() => handleSortBy("yearOfPublishing")}>Published Year</button>
         </li>
           </ul>
         </div>
@@ -58,7 +56,6 @@ const ListedBook = () => {
           <span className="text-black font-bold">Wishlist Books</span>
         </Link>
       </div>
-      {/* <Readlist sortingCriteria={sortingCriteria}/> */}
       <Outlet context={{ sortingCriteria }} />
 
     </div>

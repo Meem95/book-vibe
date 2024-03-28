@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import banner from '../assets/images/banner.png';
 const Banner = () => {
   return (
@@ -6,11 +7,14 @@ const Banner = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src={banner}
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="lg:max-w-sm rounded-lg shadow-2xl"
           />
           <div className="lg:ml-16">
             <h1 className="text-6xl font-bold ">Books to freshen up your bookshelf</h1>
+            <Link to="/listed-book">
             <button className="btn bg-green-500 btn-success text-white mt-4">View The List</button>
+            </Link>
+           
           </div>
         </div>
       </div>
