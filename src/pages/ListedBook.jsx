@@ -6,6 +6,13 @@ import { Link, Outlet } from "react-router-dom";
 const ListedBook = () => {
    
     const [tabIndex,setTabIndex] = useState(0)
+    const [sortingCriteria, setSortingCriteria] = useState("");
+    const handleSortBy = (criteria) => {
+      setSortingCriteria(criteria);
+    
+    };
+    // const value =sortingCriteria;
+    // console.log("value",value)
   return (
     <div className="min-h-screen max-w-7xl mx-auto mt-14">
       <div className="px-8 py-2 bg-[#1313130D] text-black ">
@@ -23,18 +30,21 @@ const ListedBook = () => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+            <button onClick={() => handleSortBy("rating")}>Rating</button>
             </li>
             <li>
-              <a>Item 2</a>
-            </li>
+          <button onClick={() => handleSortBy("totalPages")}>Number of Pages</button>
+        </li>
+        <li>
+          <button onClick={() => handleSortBy("yearOfPublishing")}>Publisher Year</button>
+        </li>
           </ul>
         </div>
       </div>
       <div className="flex items-start  overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap  text-black mt-14">
         <Link
                onClick={() => setTabIndex(0)}
-               to='read'
+               to=''
           className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2  ${tabIndex === 0 ? ' border border-b-0' : '  border-b' }  border-gray-400 text-black`}
         >
           <span className="text-black font-bold">Read Books</span>
@@ -48,7 +58,9 @@ const ListedBook = () => {
           <span className="text-black font-bold">Wishlist Books</span>
         </Link>
       </div>
-      <Outlet/>
+      {/* <Readlist sortingCriteria={sortingCriteria}/> */}
+      <Outlet context={{ sortingCriteria }} />
+
     </div>
   );
 };

@@ -4,7 +4,7 @@ import prof from "../assets/images/prof.svg";
 import page from "../assets/images/page.svg";
 
 const Read = ({ readBook }) => {
-  console.log("readBook", readBook);
+ // console.log("readBook", readBook);
   
   const {
     bookName,
@@ -16,12 +16,14 @@ const Read = ({ readBook }) => {
     category,
     publisher
   } = readBook;
+  //console.log("Sorting Criteria:", rating);
   return (
     <div>
       <div className="mx-auto group  border-2 p-2 border-opacity-30 hover:no-underline focus:no-underline rounded-md mt-10">
         <section className="p-3  text-black">
           <div className="container mx-auto space-y-12">
             <div className="flex flex-col overflow-hidden rounded-md  lg:flex-row">
+          
               <img
                 src={image}
                 alt=""

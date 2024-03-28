@@ -1,5 +1,5 @@
 
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis,Tooltip, Cell  } from "recharts";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis,Tooltip, Cell, CartesianGrid  } from "recharts";
 import CustomShapeBarChart from "../components/CustomShapeBarChart";
 import { useEffect, useState } from "react";
 import { getStoredReadList } from "../utility/localStorage";
@@ -31,6 +31,7 @@ const colors = ["#8884d8", "#82ca9d", "#ffc658", "#d62728", "#9467bd", "#8c564b"
         <XAxis dataKey="bookName"  />
         <YAxis />
         <Tooltip content={<CustomBarChart />} />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
            <Bar dataKey="totalPages" shape={<CustomShapeBarChart />} >
             {readListDatas.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
