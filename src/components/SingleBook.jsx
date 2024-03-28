@@ -5,7 +5,6 @@ import { saveReadList, saveWishlist } from "../utility/localStorage";
 
 const SingleBook = () => {
   const book = useLoaderData();
-  //console.log(book);
   const { id } = useParams();
   const idInt = parseInt(id);
   const bk = book.find((bk) => bk.bookId === idInt);

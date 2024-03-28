@@ -18,7 +18,7 @@ const Read = ({ readBook }) => {
     publisher,
     bookId
   } = readBook;
-  //console.log("Sorting Criteria:", rating);
+
   return (
     <div>
       <div className="mx-auto group  border-2 p-2 border-opacity-30 hover:no-underline focus:no-underline rounded-md mt-10">

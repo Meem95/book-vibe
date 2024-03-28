@@ -9,8 +9,6 @@ const Wishlist = () => {
   const wishlists = useLoaderData();
   const [wishlistBooks, setWishlistBooks] = useState([]);
 
-  //const [sortedReadBooks, setSortedReadBooks] = useState([]);
-
 
   useEffect(() => {
     const storedWishlistIds = getStoredWishlist();

@@ -31,7 +31,7 @@ const ErrorPage = () => {
             ></polygon>
           </svg>
           <p className="text-3xl">
-          Sorry, we couldn't find this page.
+          Sorry, we couldnt find this page.
           </p>
           <Link to="/"
             rel="noopener noreferrer"
