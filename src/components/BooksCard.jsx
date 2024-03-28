@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const BooksCard = ({ books }) => {
+ 
   const { bookName, author, image, category,tags,rating,bookId} = books;
 
   return (

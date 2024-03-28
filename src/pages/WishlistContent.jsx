@@ -3,9 +3,6 @@ import prof from "../assets/images/prof.svg";
 import page from "../assets/images/page.svg";
 import PropTypes from 'prop-types'
 const WishlistContent = ({ wishlistBook }) => {
-  // if (!wishlistBook) {
-  //   return <div>No data available</div>;
-  // }
   const {
     bookName,
     author,

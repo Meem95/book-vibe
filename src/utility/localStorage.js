@@ -2,24 +2,13 @@ import { toast } from "react-toastify";
 
 const getStoredWishlist = () => {
   const storedWishlist = localStorage.getItem("wishlist");
-  console.log("wishlist11111111", storedWishlist);
   if (storedWishlist) {
     return JSON.parse(storedWishlist);
   }
   return [];
 };
 const saveWishlist = (bookId) => {
-  // const storedWishlists = getStoredWishlist();
-  // console.log("wishlist11",storedWishlists)
-  // const exists = storedWishlists.find(wishlistId => wishlistId === bookId);
-  // console.log("wishlist",exists)
-  // if(exists) {
-  //     return toast('Already Wishlisted')
-  // }
-  // storedWishlists.push(bookId);
-  //     localStorage.setItem('wishlist', JSON.stringify(storedWishlists))
-  //     toast.success('Book Wishlist Successfully')
-
+  
   const storedWishlists = getStoredWishlist();
   const storedReadList = getStoredReadList();
   if (!storedWishlists) {
